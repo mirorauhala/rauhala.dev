@@ -2,9 +2,6 @@ import * as React from "react";
 import ExternalSymbol from "./ExternalLink";
 import Image from "next/image";
 import Link from "next/link";
-import tw from "tailwind-styled-components";
-
-const NavLink = tw.a`transition py-1 px-2 hover:bg-gray-200 rounded-lg`;
 
 export function Navigation() {
   return (
@@ -26,14 +23,18 @@ export function Navigation() {
 
       <ul>
         <li>
-          <NavLink>
-            <a className="inline-flex py-1 px-2 mb-1">Home</a>
-          </NavLink>
+          <Link href="/">
+            <a className="transition py-1 px-2 hover:bg-gray-200 rounded-lg inline-flex py-1 px-2 mb-1">
+              Home
+            </a>
+          </Link>
         </li>
         <li>
-          <NavLink>
-            <a className="inline-flex py-1 px-2 bg-gray-200 rounded-lg">Home</a>
-          </NavLink>
+          <Link href="/">
+            <a className="transition py-1 px-2 hover:bg-gray-200 rounded-lg inline-flex py-1 px-2 bg-gray-200 rounded-lg">
+              Home
+            </a>
+          </Link>
         </li>
       </ul>
 
@@ -41,17 +42,19 @@ export function Navigation() {
         <ul className="flex gap-2">
           <li>
             <Link href="https://github.com">
-              <NavLink>
+              <a className="transition py-1 px-2 hover:bg-gray-200 rounded-lg">
                 GitHub
                 <ExternalSymbol />
-              </NavLink>
+              </a>
             </Link>
           </li>
           <li>
-            <NavLink href="https://linkedin.com">
-              LinkedIn
-              <ExternalSymbol />
-            </NavLink>
+            <Link href="https://linkedin.com">
+              <a className="transition py-1 px-2 hover:bg-gray-200 rounded-lg">
+                LinkedIn
+                <ExternalSymbol />
+              </a>
+            </Link>
           </li>
         </ul>
         <p className="text-xs text-black opacity-60">
