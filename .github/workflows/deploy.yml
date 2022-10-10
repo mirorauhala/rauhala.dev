@@ -29,8 +29,8 @@ jobs:
           SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
           SSH_HOST_KEY: ${{ secrets.DEPLOY_SSH_HOST_KEY }}
 
+      - uses: actions/checkout@v3.1.0
       - name: Build the Docker image
-        uses: actions/checkout@v3.1.0
         run: |
           docker build . --file Dockerfile --tag ghcr.io/${{ github.repository }}:latest
           docker push ghcr.io/${{ github.repository }}:latest
