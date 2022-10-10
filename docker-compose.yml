@@ -1,0 +1,12 @@
+version: "3.2"
+
+networks:
+  infra:
+    external: true
+      
+services:
+  rauhaladev:
+    image: ghcr.io/mirorauhala/rauhala.dev:latest
+    restart: 'unless-stopped'
+    networks:
+      - infra
