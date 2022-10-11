@@ -14,7 +14,6 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.rauhaladev.rule=Host(`rauhala.dev`)"
       - "traefik.http.routers.rauhaladev.entrypoints=https"
-      - "traefik.http.routers.rauhaladev.middlewares=auth@file"
       - "traefik.http.routers.rauhaladev.service=api@internal"
       - "traefik.http.routers.rauhaladev.tls=true"
       - "traefik.http.routers.rauhaladev.tls.certresolver=le"
