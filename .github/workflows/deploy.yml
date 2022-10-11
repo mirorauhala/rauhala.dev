@@ -47,7 +47,7 @@ jobs:
         run: rsync -azvhP --delete $GITHUB_WORKSPACE prod:/home/github
 
       - name: Start app
-        run: ssh prod 'cd infra && sudo docker-compose up -d'
+        run: ssh prod 'cd rauhala.dev && sudo docker-compose up -d'
         
       # - name: Setup backup time
       #   run: ssh prod 'date +"%y-%m-%d_%H:%M" > ./backup/last_backup'
