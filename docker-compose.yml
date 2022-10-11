@@ -12,7 +12,7 @@ services:
       - infra
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.rauhaladev.rule=Host(`rauhala.dev`)"
+      - "traefik.http.routers.rauhaladev.rule=Host(`rauhala.dev`, `www.rauhala.dev`)"
       - "traefik.http.services.rauhaladev.loadbalancer.server.port=3000"
       - "traefik.http.routers.rauhaladev.entrypoints=https"
       - "traefik.http.routers.rauhaladev.tls=true"
