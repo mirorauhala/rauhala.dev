@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   output: "standalone",
   images: {
-    domains: ["avatars.githubusercontent.com"],
+    domains: ["avatars.githubusercontent.com", "via.placeholder.com"],
   },
 };
 
