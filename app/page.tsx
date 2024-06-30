@@ -1,41 +1,46 @@
-import Image from "next/image";
 import Link from "next/link";
-import Projects from "./projects";
+
 import { Footer } from "./Footer";
 
 export default function Index() {
   return (
     <>
-      <main className="px-2 py-4 md:pt-16 w-full">
-        <section className="mx-auto max-w-4xl">
-          <div className="flex justify-between mb-4">
-            <div className="inline-flex shrink-0 gap-3 items-center relative">
-              <div>
-                <Image
-                  src="https://avatars.githubusercontent.com/u/4082806"
-                  alt="Avatar"
-                  width={48}
-                  height={48}
-                  className="rounded-xl"
-                />
-              </div>
-              <div className="group">
+      <nav className="from-50% to-100% fixed w-full bg-gradient-to-b from-[#FBF5E8] to-transparent pb-24">
+        <div className="mx-auto max-w-screen-2xl px-4 py-6">
+          <div className="flex items-center justify-between">
+            <ul className="flex flex-row gap-6 text-right">
+              <li>
                 <Link
                   href="/"
-                  className="after:contents-['/'] after:w-full after:h-full after:absolute after:top-0 after:left-0 font-bold leading-4 group-hover:opacity-60 active:opacity-80"
+                  className="rounded-xl bg-black/5 px-4 py-2 text-2xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-80"
                 >
-                  Miro Rauhala
+                  Miro
                 </Link>
-                <p className="leading-4 text-black/60 group-hover:opacity-60">
-                  @mirorauhala
-                </p>
-              </div>
-            </div>
-            <ul className="flex flex-col text-right">
+              </li>
+              <li>
+                <Link
+                  href="/work"
+                  className="text-2xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-80"
+                >
+                  Work
+                </Link>
+              </li>
+            </ul>
+            <ul className="flex flex-row gap-6 text-right">
+              <li>
+                <Link
+                  href="https://github.com/mirorauhala"
+                  className="text-2xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-80"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                </Link>
+              </li>
               <li>
                 <Link
                   href="https://twitter.com/mirorauhala"
-                  className="font-bold text-sm hover:opacity-60 active:opacity-80"
+                  className="text-2xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-80"
                   target="_blank"
                   rel="noopener"
                 >
@@ -45,7 +50,7 @@ export default function Index() {
               <li>
                 <Link
                   href="https://t.me/mirorauhala"
-                  className="font-bold text-sm hover:opacity-60 active:opacity-80"
+                  className="text-2xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-80"
                   target="_blank"
                   rel="noopener"
                 >
@@ -54,27 +59,25 @@ export default function Index() {
               </li>
             </ul>
           </div>
-
-          <h1 className="font-black text-5xl pt-8 md:pt-12 md:text-7xl max-w-2xl mb-6 tracking-tighter dark:text-white">
-            Hey,
-            <br />
-            I&apos;m a full-stack developer.
+        </div>
+      </nav>
+      <main>
+        <header className="mx-auto max-w-screen-2xl px-4 pt-12 opacity-100">
+          <h1 className="text-pretty bg-gradient-to-b from-black/70 to-black bg-clip-text py-24 pb-8 font-serif text-5xl font-bold tracking-tighter text-transparent md:text-9xl">
+            Focused on crafting <br />
+            <span className="text-wheat text-red-500 selection:text-red-500">
+              digital experiences
+            </span>{" "}
+            people love to use.
           </h1>
-          <p className="text-xl max-w-2xl tracking-tight mb-3">
-            Interested in all things web, but especially in front-end
-            development. Currently working at Futurice.
+          <p className="pt-6 pb-8 font-serif text-xl tracking-tighter md:text-4xl">
+            Hi there 👋, I&rsquo;m Miro. Currently helping clients build better
+            software as full-stack developer at Futurice. If you're interested
+            in my work, see some of my personal projects below.
           </p>
-        </section>
-
-        <section className="mx-auto max-w-4xl 4xl border-t dark:border-white/20 mt-5 py-6">
-          <h2 className="text-4xl font-black tracking-tighter mb-5 dark:text-white">
-            Projects
-          </h2>
-
-          <Projects />
-        </section>
-        <Footer />
+        </header>
       </main>
+      <Footer />
     </>
   );
 }

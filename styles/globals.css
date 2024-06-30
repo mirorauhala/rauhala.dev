@@ -5,3 +5,11 @@
 :focus:not(:focus-visible) {
   outline: none;
 }
+
+button {
+  cursor: default;
+}
+
+.webkit-💩 {
+  -webkit-tap-highlight-color: transparent;
+}

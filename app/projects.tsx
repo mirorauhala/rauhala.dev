@@ -17,13 +17,13 @@ const Projects = async () => {
   ];
 
   return (
-    <ol className="grid gap-4 grid-cols-2 auto-cols-min">
+    <ol className="grid gap-4 grid-cols-2 auto-cols-min py-4">
       {projects.map((project) => (
         <li key={project.title}>
           <h5 className="font-bold text-xl">
             <Link
               href={project.link}
-              className="underline underline-offset-1 decoration-2 decoration-blue-500"
+              className="underline underline-offset-2 decoration-2 decoration-red-500"
             >
               {project.title}
             </Link>
@@ -33,7 +33,7 @@ const Projects = async () => {
             {project.tech.map((tech) => (
               <li
                 key={tech}
-                className="text-sm text-gray-500 dark:text-white/60"
+                className="text-sm text-stone-500 dark:text-white/60"
               >
                 {tech}
               </li>
