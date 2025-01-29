@@ -9,7 +9,7 @@ export const Nav = () => {
             <li>
               <Link
                 href="/"
-                className="rounded-xl bg-black/10 p-2 px-4 text-xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-70 md:text-2xl"
+                className="rounded-xl bg-white/10 p-2 px-4 text-xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-70 md:text-2xl"
               >
                 Miro
               </Link>
