@@ -10,25 +10,6 @@ jobs:
     name: "Deploy"
     runs-on: ubuntu-latest
     steps:
-      - name: Configure SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/prod.key
-          echo "$SSH_HOST_KEY" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/*
-          cat >>~/.ssh/config <<END
-          Host prod
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/prod.key
-            StrictHostKeyChecking yes
-          END
-        env:
-          SSH_USER: ${{ secrets.DEPLOY_SSH_USER }}
-          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
-          SSH_HOST_KEY: ${{ secrets.DEPLOY_SSH_HOST_KEY }}
-
       - name: Login to Container registry
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | \
@@ -42,31 +23,3 @@ jobs:
 
       - name: Login to Container registry on prod
         run: ssh prod 'echo "${{ secrets.GITHUB_TOKEN }}" | sudo docker login ghcr.io -u "${{ github.actor }}" --password-stdin'
-
-      - name: Clone app
-        run: rsync -azvhP --delete $GITHUB_WORKSPACE prod:/home/github
-
-      - name: Start app
-        run: ssh prod 'cd rauhala.dev && sudo docker-compose up -d'
-        
-      # - name: Setup backup time
-      #   run: ssh prod 'date +"%y-%m-%d_%H:%M" > ./backup/last_backup'
-
-      # - name: Dump old database
-      #   env:
-      #     PG_USER: ${{ secrets.PG_USER }}
-      #   run: ssh prod 'docker-compose exec postgres pg_dumpall -U $PG_USER > /backup/backup_$(cat /backup/last_backup).sql'
-
-      # - name: Stop the container
-      #   run: ssh prod 'docker-compose stop postgres'
-
-      # - name: Remove the data volume
-      #   run: ssh prod 'docker volume rm pg_data'
-
-      # - name: Start new postgres
-      #   run: ssh prod 'docker-compose start postgres'
-
-      # - name: Import the backup
-      #   env:
-      #     PG_USER: ${{ secrets.PG_USER }}
-      #   run: ssh prod 'docker-compose exec postgres sh "psql -U $PG_USER < /backup/backup_$(cat /backup/last_backup).sql"
