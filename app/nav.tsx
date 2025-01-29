@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Nav = () => {
   return (
     <nav className="fixed w-full font-serif backdrop-blur-2xl">
-      <div className="mx-auto max-w-screen-2xl px-4 py-6">
+      <div className="mx-auto max-w-(--breakpoint-2xl) px-4 py-6">
         <div className="flex items-center justify-between">
           <ul className="flex flex-row gap-1 text-right md:gap-4">
             <li>

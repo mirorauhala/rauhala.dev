@@ -7,7 +7,7 @@ export default function Work() {
     <>
       <Nav />
 
-      <main className="mx-auto max-w-screen-2xl border-white/20 px-4 py-6 pt-24">
+      <main className="mx-auto max-w-(--breakpoint-2xl) border-white/20 px-4 py-6 pt-24">
         <h2 className="mb-5 font-serif text-7xl font-bold tracking-tighter text-white">
           My Work
         </h2>

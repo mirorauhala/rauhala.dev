@@ -100,7 +100,7 @@ export default async function Blog({ params }: Props) {
       <article
         className={clsx([
           "[&_table]:w-full",
-          "[&_table]:rounded",
+          "[&_table]:rounded-sm",
           "[&_table]:table-auto",
           "[&_table]:mt-2",
           "[&_table]:mb-6",
