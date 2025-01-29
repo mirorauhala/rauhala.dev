@@ -35,7 +35,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="mx-auto flex w-full max-w-screen-2xl justify-between border-t border-black/10 px-4 py-6 dark:border-white/30">
+    <footer className="mx-auto flex w-full max-w-screen-2xl justify-between border-t border-white/30 px-4 py-6">
       <Link
         href="/"
         className="group relative inline-flex shrink-0 items-center gap-3"

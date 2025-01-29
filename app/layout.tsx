@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Inter, Lora, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 
 export const metadata = {
   title: "Miro Rauhala",
@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} selection:bg-red-600 selection:text-white`}
     >
-      <body className="h-dvh bg-amber-100 transition-colors duration-300 dark:bg-slate-950 dark:text-white/90">
+      <body className="h-dvh bg-slate-950 text-white/90 transition-colors duration-300">
         {children}
       </body>
     </html>

@@ -8,7 +8,7 @@ export default function Index() {
       <div className="flex h-full flex-col items-stretch justify-between gap-y-2 pt-20">
         <div className="flex items-center justify-center md:h-full">
           <header className="mx-auto max-w-screen-2xl px-4">
-            <h1 className="text-pretty to-100% bg-clip-text pb-8 font-serif text-5xl font-bold tracking-tighter text-amber-950 md:text-7xl lg:text-9xl dark:text-[#79262F]">
+            <h1 className="text-pretty to-100% bg-clip-text pb-8 font-serif text-5xl font-bold tracking-tighter text-[#79262F] md:text-7xl lg:text-9xl">
               Focused on crafting <br />
               <span className="text-wheat text-red-500">
                 digital experiences

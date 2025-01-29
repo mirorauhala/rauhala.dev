@@ -26,10 +26,7 @@ const Projects = async () => {
           <p className="text-lg tracking-tight">{project.description}</p>
           <ul className="mt-1 flex gap-2">
             {project.tech.map((tech) => (
-              <li
-                key={tech}
-                className="text-sm text-slate-500 dark:text-white/60"
-              >
+              <li key={tech} className="text-sm text-white/60">
                 {tech}
               </li>
             ))}
