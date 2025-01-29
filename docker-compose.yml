@@ -8,5 +8,6 @@ services:
   rauhala:
     image: ghcr.io/mirorauhala/rauhala.dev:latest
     restart: 'unless-stopped'
+    container_name: rauhala
     networks:
       - infra
