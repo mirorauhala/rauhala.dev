@@ -36,16 +36,6 @@ export const Nav = () => {
             </li>
             <li>
               <Link
-                href="https://twitter.com/mirorauhala"
-                className="p-2 text-xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-70 md:text-2xl"
-                target="_blank"
-                rel="noopener"
-              >
-                Twitter
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="https://t.me/mirorauhala"
                 className="p-2 text-xl tracking-tight transition-opacity delay-75 hover:opacity-60 active:opacity-70 md:text-2xl"
                 target="_blank"
