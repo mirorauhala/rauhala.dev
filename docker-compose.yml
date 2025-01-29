@@ -5,17 +5,8 @@ networks:
     external: true
       
 services:
-  rauhaladev:
+  rauhala:
     image: ghcr.io/mirorauhala/rauhala.dev:latest
     restart: 'unless-stopped'
     networks:
       - infra
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.rauhaladev.rule=Host(`rauhala.dev`, `www.rauhala.dev`)"
-      - "traefik.http.services.rauhaladev.loadbalancer.server.port=3000"
-      - "traefik.http.routers.rauhaladev.entrypoints=https"
-      - "traefik.http.routers.rauhaladev.tls=true"
-      - "traefik.http.routers.rauhaladev.tls.certresolver=le"
-      - "traefik.http.routers.rauhaladev.tls.domains[0].main=rauhala.dev"
-      - "traefik.http.routers.rauhaladev.tls.domains[0].sans=*.rauhala.dev"
