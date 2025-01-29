@@ -9,6 +9,18 @@ const Projects = async () => {
       tech: ["Next.js", "Tailwind CSS"],
     },
     {
+      title: "rauhala.dev",
+      description: "My portfolio site.",
+      link: "https://github.com/mirorauhala/rauhala.dev",
+      tech: ["Next.js", "TailwindCSS"],
+    },
+    {
+      title: "infra",
+      description: "How this site is hosted",
+      link: "https://github.com/mirorauhala/infra",
+      tech: ["Docker"],
+    },
+    {
       title: "fi.react.dev",
       description: "The official React.js documentation in Finnish.",
       link: "https://github.com/reactjs/fi.react.dev",
