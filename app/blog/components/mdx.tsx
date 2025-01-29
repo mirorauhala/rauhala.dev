@@ -28,7 +28,7 @@ function RoundedImage(props: any) {
 }
 
 function Code({ children, ...props }: PropsWithChildren) {
-  let codeHTML = highlight(children);
+  let codeHTML = highlight(String(children));
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
@@ -44,21 +44,20 @@ function slugify(str: string) {
 }
 
 function createHeading(level: number) {
-  console.log("level", level);
-  const Heading = ({ children }) => {
-    let slug = slugify(children);
-    const classNames = {
-      1: "text-7xl",
-      2: "text-lg",
-      3: "text-lg",
-      4: "text-lg",
-      5: "text-lg",
-      6: "text-lg",
+  const Heading = ({ children }: PropsWithChildren) => {
+    let slug = slugify(String(children));
+    const classNames: Record<string, string> = {
+      "1": "text-7xl",
+      "2": "text-lg",
+      "3": "text-lg",
+      "4": "text-lg",
+      "5": "text-lg",
+      "6": "text-lg",
     };
 
     return React.createElement(
       `h${level}`,
-      { id: slug, className: classNames[level] },
+      { id: slug, className: classNames[`${level}`] },
       [
         React.createElement("a", {
           href: `#${slug}`,
@@ -76,8 +75,7 @@ function createHeading(level: number) {
 }
 
 function createParagraph() {
-  const Paragraph = ({ children }) => {
-    let slug = slugify(children);
+  const Paragraph = ({ children }: PropsWithChildren) => {
     return React.createElement(`p`, { className: "pb-3" }, children);
   };
 
