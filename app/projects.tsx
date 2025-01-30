@@ -29,7 +29,7 @@ const Projects = async () => {
   ];
 
   return (
-    <ol className="grid auto-cols-min grid-cols-2 gap-4 py-4 pt-12">
+    <ol className="grid auto-cols-min grid-cols-1 gap-y-8 py-4 pt-12 md:grid-cols-2 md:gap-4">
       {projects.map((project) => (
         <li key={project.title}>
           <h5 className="font-serif text-2xl font-bold">
