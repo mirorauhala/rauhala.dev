@@ -38,12 +38,12 @@ export const Nav = () => {
     {
       href: "https://github.com/mirorauhala",
       label: "GitHub",
-      isActive: (activePage) => activePage === "/",
+      isActive: () => false,
     },
     {
       href: "https://t.me/mirorauhala",
       label: "Telegram",
-      isActive: (activePage) => activePage === "/work",
+      isActive: () => false,
     },
   ];
 
