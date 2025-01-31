@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "@/app/blog/components/mdx";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import { CustomMDX } from "@/app/posts/components/mdx";
+import { formatDate, getBlogPosts } from "@/app/posts/utils";
 import { baseUrl } from "app/sitemap";
 import clsx from "clsx";
 
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       type: "article",
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/posts/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -81,7 +81,7 @@ export default async function Blog({ params }: Props) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/posts/${post.slug}`,
             author: {
               "@type": "Miro Rauhala",
               name: "My Portfolio",
@@ -92,7 +92,7 @@ export default async function Blog({ params }: Props) {
       <h1 className="title mb-4 font-serif text-5xl font-semibold tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="mb-8 mt-2 flex items-center justify-between text-sm">
+      <div className="mt-2 mb-8 flex items-center justify-between text-sm">
         <p className="text-lg text-white/50">
           {formatDate(post.metadata.publishedAt)}
         </p>
@@ -111,10 +111,10 @@ export default async function Blog({ params }: Props) {
           "[&_table_td]:border-[#1D1F2F]",
           "[&_table_td]:border",
           "[&_table_td]:p-2",
-          "[&_h1]:pb-2 [&_h1]:pt-1 [&_h1]:text-3xl [&_h1]:font-bold",
-          "[&_h2]:pb-2 [&_h2]:pt-1 [&_h2]:text-2xl [&_h2]:font-bold",
-          "[&_h3]:pb-2 [&_h3]:pt-1 [&_h3]:text-xl [&_h3]:font-bold",
-          "[&_h3]:pb-2 [&_h3]:pt-1 [&_h3]:text-lg [&_h3]:font-bold",
+          "[&_h1]:pt-1 [&_h1]:pb-2 [&_h1]:text-3xl [&_h1]:font-bold",
+          "[&_h2]:pt-1 [&_h2]:pb-2 [&_h2]:text-2xl [&_h2]:font-bold",
+          "[&_h3]:pt-1 [&_h3]:pb-2 [&_h3]:text-xl [&_h3]:font-bold",
+          "[&_h3]:pt-1 [&_h3]:pb-2 [&_h3]:text-lg [&_h3]:font-bold",
           "[&_ul]:m b-2 [&_li]:pl-2 [&_ul]:list-disc [&_ul]:pl-6",
           "[&_pre]:my-4",
         ])}
