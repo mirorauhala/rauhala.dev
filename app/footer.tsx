@@ -35,7 +35,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="mx-auto flex w-full max-w-(--breakpoint-2xl) justify-between border-t border-white/30 px-4 py-6">
+    <footer className="mx-auto flex w-full max-w-(--breakpoint-2xl) justify-between border-t border-white/15 px-4 py-6">
       <Link
         href="/"
         className="group relative inline-flex shrink-0 items-center gap-3"
@@ -49,7 +49,7 @@ export const Footer = () => {
             className="rounded-lg mix-blend-luminosity grayscale"
           />
         </div>
-        <div className="font-medium leading-4 tracking-tight transition-opacity delay-75 group-hover:opacity-60 group-active:opacity-70">
+        <div className="leading-4 font-medium tracking-tight transition-opacity delay-75 group-hover:opacity-60 group-active:opacity-70">
           Miro Rauhala
         </div>
       </Link>
