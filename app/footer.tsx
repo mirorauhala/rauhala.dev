@@ -49,7 +49,7 @@ export const Footer = () => {
             className="rounded-lg mix-blend-luminosity grayscale"
           />
         </div>
-        <div className="leading-4 font-medium tracking-tight transition-opacity delay-75 group-hover:opacity-60 group-active:opacity-70">
+        <div className="leading-4 font-medium tracking-tight transition-opacity delay-75 group-focus:opacity-60 group-active:opacity-70">
           Miro Rauhala
         </div>
       </Link>
