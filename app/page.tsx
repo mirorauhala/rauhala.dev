@@ -10,9 +10,7 @@ export default function Index() {
           <header className="mx-auto max-w-(--breakpoint-2xl) px-4">
             <h1 className="pb-8 font-serif text-5xl font-bold tracking-tighter text-pretty text-[#79262F] md:text-7xl lg:text-9xl">
               Focused on crafting <br />
-              <span className="text-wheat text-red-500">
-                digital experiences
-              </span>{" "}
+              <span className="animate-landing">digital experiences</span>{" "}
               people love to use.
             </h1>
             <p className="pb-8 font-serif text-2xl tracking-tighter md:pt-6 md:text-3xl lg:text-4xl">
