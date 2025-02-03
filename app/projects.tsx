@@ -3,9 +3,9 @@ import Link from "next/link";
 const Projects = async () => {
   const projects = [
     {
-      title: "filebase",
+      title: "files",
       description: "A simple file-sharing application.",
-      link: "https://github.com/mirorauhala/filebase",
+      link: "https://github.com/mirorauhala/files",
       tech: ["Next.js", "Tailwind CSS"],
     },
     {
