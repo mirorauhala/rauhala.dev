@@ -1,20 +1,21 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/app/posts/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/posts/utils";
-import { baseUrl } from "app/sitemap";
+import { baseUrl } from "@/app/sitemap.skip";
 import clsx from "clsx";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  let posts = getBlogPosts();
+// skip for now
+// export async function generateStaticParams() {
+//   let posts = getBlogPosts();
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }));
+// }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
